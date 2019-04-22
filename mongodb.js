@@ -1,7 +1,6 @@
 // CRUD create read update delete
 
-const mongodb = require('mongodb')
-const MongoClient = mongodb.MongoClient
+const { MongoClient, ObjectID } = require('mongodb')
 
 const connectionURL = 'mongodb://127.0.0.1:27017'
 const databaseName = 'task-manager'
@@ -13,49 +12,19 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client) =>
 
   const db = client.db(databaseName)
 
-  // db.collection('users').insertOne({
-  //   name: 'David',
+  // db.collection('users').deleteMany({
   //   location: 'Everett'
-  // }, (error, result) => {
-  //     if (error) {
-  //       return console.log('Unable to insert user')
-  //     }
-  //
-  //     console.log(result.ops)
+  // }).then((result) => {
+  //     console.log(result)
+  // }).catch((error) => {
+  //     console.log(error)
   // })
 
-  // db.collection('users').insertMany([
-  //   {
-  //     name: 'Caitlin',
-  //     location: 'Everett'
-  //   }, {
-  //     name: 'William',
-  //     location: 'My head'
-  //   }
-  // ], (error, result) => {
-  //   if (error) {
-  //     return console.log('Unable to insert documents')
-  //   }
-  //
-  //   console.log(result.ops)
-  // })
-
-  db.collection('tasks').insertMany([
-    {
-      description: 'practice drums',
-      completed: true
-    }, {
-      description: 'cook dinner',
-      completed: true
-    }, {
-      description: 'learn to code',
-      completed: false
-    }
-  ], (error, result) => {
-    if (error) {
-      return console.log('Unable to insert tasks')
-    }
-
-    console.log(result.ops)
+  db.collection('tasks').deleteOne({
+      description: 'cook dinner'
+  }).then((result) => {
+    console.log(result)
+  }).catch((error) => {
+    console.log(error)
   })
 })
