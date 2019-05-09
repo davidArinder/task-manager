@@ -1,8 +1,4 @@
-//This app involves setting up a rest API route -- rest API
 ///home/david/mongodb/bin/mongod --dbpath=/home/david/mongodb-data
-//uses routing when setting up API endpoints etc
-//security: passwords and encryption (bcrypt.js hashing algorithm)
-//user authentication
 
 const express = require('express')
 require('./db/mongoose')
