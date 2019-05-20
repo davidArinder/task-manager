@@ -25,13 +25,31 @@ router.post('/users/login', async (req, res) => {
     }
 })
 
-router.get('/users', auth, async (req, res) => {
+router.post('/users/logout', auth, async (req, res) => {
     try {
-        const users = await User.find({})
-        res.send(users)
+        req.user.tokens = req.user.tokens.filter((token) => {
+            return token.token !== req.token
+        })
+        await req.user.save()
+
+        res.send()
     } catch (e) {
         res.status(500).send()
     }
+})
+
+router.post('/users/logoutAll', auth, async (req, res) => {
+    try {
+        req.user.tokens = [] // delete all tokens
+        await req.user.save()
+        res.send()
+    } catch (e) {
+        res.status(500).send()
+    }
+})
+
+router.get('/users/me', auth, async (req, res) => {
+    res.send(req.user)
 })
 
 //giving me 500 status when no user when should be 404

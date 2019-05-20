@@ -59,6 +59,17 @@ userSchema.methods.generateAuthToken = async function () {
     return token
 }
 
+// schema to remove password and tokens from response
+userSchema.methods.toJSON = function () {
+    const user = this
+    const userObject = user.toObject()
+
+    delete userObject.password
+    delete userObject.tokens
+
+    return userObject
+}
+
 // create findByCredentials for user login
 userSchema.statics.findByCredentials = async (email, password) => {
     const user = await User.findOne({ email })
