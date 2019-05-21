@@ -1,5 +1,3 @@
-//tasks model
-
 const mongoose = require('mongoose')
 
 const Task = mongoose.model('Task', {
@@ -11,19 +9,12 @@ const Task = mongoose.model('Task', {
     completed: {
         type: Boolean,
         default: false
+    },
+    owner: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'User'
     }
 })
-
-// const taskSchema = new mongoose.Schema({
-//     description: {
-//         type: String,
-//         required: true,
-//         trim: true
-//     }, 
-//     completed: {
-//         type: Boolean,
-//         default: false
-//     }
-// })
 
 module.exports = Task
