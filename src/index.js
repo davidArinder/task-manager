@@ -1,5 +1,3 @@
-///home/david/mongodb/bin/mongod --dbpath=/home/david/mongodb-data
-
 const express = require('express')
 require('./db/mongoose')
 const userRouter = require('./routers/user')
