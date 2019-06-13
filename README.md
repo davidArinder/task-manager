@@ -157,15 +157,7 @@ curl -X DELETE \
 
 Returns deleted task:
 ```
-{
-  "completed": true_or_false,
-  "_id": "id_string",
-  "description":"name_of_new_task",
-  "owner":"owner_id_string",
-  "createdAt":"created_at_date",
-  "updatedAt":"updated_at_date",
-  "__v":0
-}
+Task deleted
 ```
 
 ### <a name="accountManagement"></a>Account management
