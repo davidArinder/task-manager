@@ -1,3 +1,4 @@
+This is a REST API for managing user tasks. It's hosted on Heroku.
 ## <a name="ToC"></a>Table of Contents
 1. [Account Creation](#accountCreation)
 2. [Authentication](#authentication)
