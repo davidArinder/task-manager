@@ -1,4 +1,6 @@
-This is a REST API for managing user tasks. It's hosted on Heroku.
+## <a name="overview"></a>Overview
+This is a REST API for managing user tasks. It's hosted on Heroku. You can interact with the app using the cURL calls outlined below. It may take a few seconds for the Heroku app to spin up, so the first request's response time might be slow.
+
 ## <a name="ToC"></a>Table of Contents
 1. [Account Creation](#accountCreation)
 2. [Authentication](#authentication)
