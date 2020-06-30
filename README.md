@@ -22,7 +22,6 @@ curl -X POST \
 ```
 2) Wait for the API's response. It's hashing your password and will take a short while.
 3) After receiving the response, **save the return token returned**.
-3) Check your email, there should be a `welcome message` (it might be in your spam).
 
 ### <a name="authentication"></a>Authentication
 #### Login
